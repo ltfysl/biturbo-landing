@@ -26,7 +26,7 @@ export function Logo({
         sizes={`${size}px`}
         quality={100}
         priority={priority}
-        className="block invert"
+        className="block"
         style={{ width: size, height: size }}
       />
       {!markOnly && (
