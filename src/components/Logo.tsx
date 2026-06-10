@@ -12,7 +12,7 @@ type LogoProps = {
 };
 
 export function Logo({
-  size = 32,
+  size = 50,
   markOnly = false,
   className,
   priority = false,
@@ -23,7 +23,6 @@ export function Logo({
         src={logoIcon}
         alt="biTurbo"
         width={size * 2}
-        height={size * 2}
         sizes={`${size}px`}
         quality={100}
         priority={priority}
