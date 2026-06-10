@@ -27,12 +27,12 @@ export function Logo({
         quality={100}
         priority={priority}
         className="block"
-        style={{ width: size, height: size }}
+        style={{ width: size }}
       />
       {!markOnly && (
         <span
           className="font-display text-ink tracking-tight"
-          style={{ fontSize: Math.round(size * 0.75), fontWeight: 700 }}
+          style={{ fontSize: Math.round(50 * 0.75), fontWeight: 700 }}
         >
           biTurbo
         </span>
