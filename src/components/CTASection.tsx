@@ -47,7 +47,7 @@ export function CTASection() {
           className="mt-12 flex flex-wrap items-center justify-center gap-4"
         >
           <a
-            href="https://github.com/RyanCodrai/biturbo"
+            href="https://github.com/ltfysl/biTurbo"
             className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-ink px-7 py-4 text-base font-medium text-ink-900 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-15px_rgba(236,235,227,0.5)]"
           >
             <svg

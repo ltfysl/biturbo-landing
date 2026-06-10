@@ -9,7 +9,7 @@ export function OSSVisual() {
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-lilac" />
           <span className="text-[10px] uppercase tracking-widest text-ink-300">
-            github.com/RyanCodrai/biturbo
+            github.com/ltfysl/biTurbo
           </span>
         </div>
         <span className="rounded-full bg-lilac/15 px-2 py-0.5 text-[9px] text-lilac">

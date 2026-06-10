@@ -37,7 +37,7 @@ export function Logo({
         sizes={`${w}px`}
         quality={100}
         priority={priority}
-        className="block"
+        className="block invert"
         style={{ width: w, height: h }}
       />
     </span>

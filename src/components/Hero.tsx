@@ -124,7 +124,7 @@ function HeroContent() {
           <span>1M memories in laptop RAM</span>
         </div>
         <a
-          href="https://github.com/RyanCodrai/biturbo"
+          href="https://github.com/ltfysl/biTurbo"
           className="group inline-flex items-center gap-2 text-ink-200 transition-colors hover:text-ink"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-moss" />

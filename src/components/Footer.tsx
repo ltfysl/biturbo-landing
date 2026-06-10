@@ -24,16 +24,16 @@ export function Footer() {
 
           <FooterCol title="Stack">
             <FooterLink href="https://tauri.app" external>Tauri 2</FooterLink>
-            <FooterLink href="https://github.com/RyanCodrai/turbovec" external>turbovec 4-bit</FooterLink>
+            <FooterLink href="https://github.com/ltfysl/turbovec" external>turbovec 4-bit</FooterLink>
             <FooterLink href="https://github.com/modelcontextprotocol/rust-sdk" external>rmcp</FooterLink>
             <FooterLink href="https://tree-sitter.github.io" external>tree-sitter</FooterLink>
           </FooterCol>
 
           <FooterCol title="Source">
-            <FooterLink href="https://github.com/RyanCodrai/biturbo" external>GitHub</FooterLink>
-            <FooterLink href="https://github.com/RyanCodrai/biturbo/blob/main/LICENSE" external>MIT license</FooterLink>
-            <FooterLink href="https://github.com/RyanCodrai/biturbo/blob/main/INSTRUCTIONS.md" external>INSTRUCTIONS.md</FooterLink>
-            <FooterLink href="https://github.com/RyanCodrai/biturbo/issues" external>Issues</FooterLink>
+            <FooterLink href="https://github.com/ltfysl/biTurbo" external>GitHub</FooterLink>
+            <FooterLink href="https://github.com/ltfysl/biTurbo/blob/main/LICENSE" external>MIT license</FooterLink>
+            <FooterLink href="https://github.com/ltfysl/biTurbo/blob/main/INSTRUCTIONS.md" external>INSTRUCTIONS.md</FooterLink>
+            <FooterLink href="https://github.com/ltfysl/biTurbo/issues" external>Issues</FooterLink>
           </FooterCol>
         </div>
 

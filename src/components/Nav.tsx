@@ -59,7 +59,7 @@ export function Nav() {
 
           <div className="flex items-center gap-2">
             <a
-              href="https://github.com/RyanCodrai/biturbo"
+              href="https://github.com/ltfysl/biTurbo"
               className="hidden font-mono text-xs text-ink-200 transition-colors hover:text-ink sm:inline"
             >
               ★ GitHub
