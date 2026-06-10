@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
+import logoFull from "../../public/logo-full-600.png";
+import logoMark from "../../public/logo-mark.png";
 
 type LogoProps = {
   /** Height in pixels. Width is derived from the source aspect ratio. */
@@ -25,7 +27,7 @@ export function Logo({
   const aspect = markOnly ? ASPECT_MARK : ASPECT_FULL;
   const w = markOnly ? size : Math.round(size * aspect);
   const h = size;
-  const imgSrc = src ?? (markOnly ? "/logo-mark.png" : "/logo-full-600.png");
+  const imgSrc = src ?? (markOnly ? logoMark : logoFull);
 
   return (
     <span className={cn("inline-flex items-center", className)}>
