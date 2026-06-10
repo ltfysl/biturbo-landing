@@ -63,7 +63,7 @@ export default function Home() {
           <>
             biTurbo speaks Model Context Protocol out of the box. <code className="font-mono text-sky">remember</code>,
             {" "}<code className="font-mono text-sky">forget</code>, <code className="font-mono text-sky">search</code>,
-            {" "}<code className="font-mono text-sky">recall_for_context</code> — the works. Plugs into Claude
+            {" "}<code className="font-mono text-sky">recall_for_context</code>. Plugs into Claude
             Code, Cursor, Cline, Mavis, anything that speaks MCP. No proxy server, no SaaS relay.
             Your embeddings never leave your machine.
           </>
