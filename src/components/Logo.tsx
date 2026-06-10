@@ -1,47 +1,43 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
-import logoFull from "../../public/logo-full-600.png";
-import logoMark from "../../public/logo-mark.png";
+import logoIcon from "../../public/new-logo.png";
 
 type LogoProps = {
-  /** Height in pixels. Width is derived from the source aspect ratio. */
+  /** Height in pixels for the icon. */
   size?: number;
-  /** Show just the rounded-square mark, no wordmark. */
+  /** Show just the icon mark, no wordmark. */
   markOnly?: boolean;
   className?: string;
-  /** Override the default source. */
-  src?: string;
   priority?: boolean;
 };
-
-const ASPECT_FULL = 600 / 218;
-const ASPECT_MARK = 1;
 
 export function Logo({
   size = 32,
   markOnly = false,
   className,
-  src,
   priority = false,
 }: LogoProps) {
-  const aspect = markOnly ? ASPECT_MARK : ASPECT_FULL;
-  const w = markOnly ? size : Math.round(size * aspect);
-  const h = size;
-  const imgSrc = src ?? (markOnly ? logoMark : logoFull);
-
   return (
-    <span className={cn("inline-flex items-center", className)}>
+    <span className={cn("inline-flex items-center gap-2", className)}>
       <Image
-        src={imgSrc}
+        src={logoIcon}
         alt="biTurbo"
-        width={w * 2}
-        height={h * 2}
-        sizes={`${w}px`}
+        width={size * 2}
+        height={size * 2}
+        sizes={`${size}px`}
         quality={100}
         priority={priority}
         className="block invert"
-        style={{ width: w, height: h }}
+        style={{ width: size, height: size }}
       />
+      {!markOnly && (
+        <span
+          className="font-display text-ink tracking-tight"
+          style={{ fontSize: Math.round(size * 0.75), fontWeight: 700 }}
+        >
+          biTurbo
+        </span>
+      )}
     </span>
   );
 }
