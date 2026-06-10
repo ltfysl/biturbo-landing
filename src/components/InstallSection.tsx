@@ -17,16 +17,16 @@ export function InstallSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0.3]);
 
   return (
-    <section ref={ref} id="install" className="relative min-h-[90vh] overflow-hidden py-32">
+    <section ref={ref} id="install" className="relative min-h-[60vh] overflow-hidden py-20 md:min-h-[90vh] md:py-32">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-moss/40 to-transparent" />
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-30" />
 
       {mounted ? (
         <motion.div
           style={{ y, opacity }}
-          className="relative z-10 mx-auto max-w-7xl px-6"
+          className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6"
         >
-        <div className="mb-12">
+        <div className="mb-8 md:mb-12">
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-moss">
             § install
           </span>
@@ -61,7 +61,7 @@ export function InstallSection() {
       ) : (
         <div
           suppressHydrationWarning
-          className="relative z-10 mx-auto max-w-7xl px-6"
+          className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6"
         >
           <InstallContent />
         </div>

@@ -66,7 +66,7 @@ export function ZoomSection({
     <section
       ref={ref}
       id={id}
-      className="relative min-h-[140vh] overflow-hidden"
+      className="relative min-h-[100vh] overflow-hidden md:min-h-[140vh]"
     >
       <div
         className={cn(
@@ -79,8 +79,8 @@ export function ZoomSection({
       />
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-30" />
 
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-12 lg:items-center">
+      <div className="sticky top-0 flex min-h-screen items-center overflow-hidden py-8 md:py-0">
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 md:gap-12 lg:grid-cols-12 lg:items-center">
           <MotionBlock
             mounted={mounted}
             className={cn("lg:col-span-6", align === "right" && "lg:order-2", align === "center" && "lg:col-span-12 lg:text-center")}

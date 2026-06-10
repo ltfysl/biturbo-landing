@@ -30,31 +30,33 @@ export function ComparisonSection() {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-ink-200/10 bg-ink-200/[0.02]">
-          <div className="grid grid-cols-3 border-b border-ink-200/10 bg-ink-200/[0.03] px-6 py-4 font-mono text-xs uppercase tracking-wider text-ink-300">
-            <div>Dimension</div>
-            <div className="flex items-center gap-2 text-moss">
-              <span className="h-2 w-2 rounded-full bg-moss" />
-              biTurbo
-            </div>
-            <div>Cloud-hosted / bolt-on</div>
-          </div>
-          {rows.map((row, i) => (
-            <motion.div
-              key={row.feature}
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: "-50px" }}
-              transition={{ delay: i * 0.04 }}
-              className="grid grid-cols-3 border-b border-ink-200/5 px-6 py-4 text-sm last:border-b-0 hover:bg-ink-200/[0.02]"
-            >
-              <div className="font-mono text-xs uppercase tracking-wider text-ink-300">
-                {row.feature}
+        <div className="overflow-x-auto rounded-2xl border border-ink-200/10 bg-ink-200/[0.02]">
+          <div className="min-w-[520px]">
+            <div className="grid grid-cols-3 border-b border-ink-200/10 bg-ink-200/[0.03] px-4 py-4 font-mono text-xs uppercase tracking-wider text-ink-300 sm:px-6">
+              <div>Dimension</div>
+              <div className="flex items-center gap-2 text-moss">
+                <span className="h-2 w-2 rounded-full bg-moss" />
+                biTurbo
               </div>
-              <div className="font-medium text-ink">{row.biturbo}</div>
-              <div className="text-ink-300/60">{row.cloud} / {row.other}</div>
-            </motion.div>
-          ))}
+              <div>Cloud-hosted / bolt-on</div>
+            </div>
+            {rows.map((row, i) => (
+              <motion.div
+                key={row.feature}
+                initial={false}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, margin: "-50px" }}
+                transition={{ delay: i * 0.04 }}
+                className="grid grid-cols-3 border-b border-ink-200/5 px-4 py-4 text-sm last:border-b-0 hover:bg-ink-200/[0.02] sm:px-6"
+              >
+                <div className="font-mono text-xs uppercase tracking-wider text-ink-300">
+                  {row.feature}
+                </div>
+                <div className="font-medium text-ink">{row.biturbo}</div>
+                <div className="text-ink-300/60">{row.cloud} / {row.other}</div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -4,11 +4,11 @@ import { Logo } from "./Logo";
 export function Footer() {
   return (
     <footer className="relative border-t border-ink-200/10 py-16">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-flex">
-              <Logo size={100} />
+              <Logo size={34} />
             </Link>
             <p className="mt-4 max-w-xs text-sm text-ink-300">
               Local-first memory for AI coding agents. Persistent, project-scoped, semantic.
@@ -37,7 +37,7 @@ export function Footer() {
           </FooterCol>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-ink-200/10 pt-6 font-mono text-xs text-ink-300 md:flex-row md:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-ink-200/10 pt-6 font-mono text-xs text-ink-300 sm:flex-row sm:items-center">
           <div>© 2025 biTurbo · built with Rust + React · no analytics, no cookies, no BS</div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">

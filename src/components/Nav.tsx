@@ -1,14 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 import { Logo } from "./Logo";
 
+const navLinks = [
+  { href: "/features", label: "Features" },
+  { href: "/#memory", label: "Memory" },
+  { href: "/#mcp", label: "MCP" },
+  { href: "/#graph", label: "Graph" },
+  { href: "/#speed", label: "Speed" },
+  { href: "/#oss", label: "Open Source" },
+];
+
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 80], [0, 1]);
   const blur = useTransform(scrollY, [0, 80], [0, 12]);
@@ -20,6 +30,15 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
 
   return (
     <>
@@ -40,21 +59,18 @@ export function Nav() {
           scrolled ? "border-b border-ink-200/10" : ""
         )}
       >
-        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
           <Link href="/" className="group flex items-center gap-3">
-            <Logo size={100} priority />
+            <Logo size={32} priority />
             <span className="hidden font-mono text-[10px] uppercase tracking-widest text-ink-300 sm:inline-block">
               v0.2
             </span>
           </Link>
 
           <div className="hidden items-center gap-1 rounded-full border border-ink-200/10 bg-ink-200/[0.03] p-1 md:flex">
-            <NavLink href="/features">Features</NavLink>
-            <NavLink href="/#memory">Memory</NavLink>
-            <NavLink href="/#mcp">MCP</NavLink>
-            <NavLink href="/#graph">Graph</NavLink>
-            <NavLink href="/#speed">Speed</NavLink>
-            <NavLink href="/#oss">Open Source</NavLink>
+            {navLinks.map((l) => (
+              <NavLink key={l.href} href={l.href}>{l.label}</NavLink>
+            ))}
           </div>
 
           <div className="flex items-center gap-2">
@@ -64,12 +80,75 @@ export function Nav() {
             >
               ★ GitHub
             </a>
-            <Link href="/features" className="button-primary !px-4 !py-2 !text-xs">
+            <Link href="/features" className="button-primary !px-3 !py-2 !text-xs hidden sm:inline-flex">
               Explore features →
             </Link>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="relative z-[60] flex h-9 w-9 items-center justify-center rounded-full border border-ink-200/20 bg-ink-200/5 md:hidden"
+              aria-label="Toggle menu"
+            >
+              <span className="sr-only">Menu</span>
+              <div className="flex flex-col items-center justify-center gap-1">
+                <span className={cn("block h-px w-4 bg-ink transition-transform duration-200", mobileOpen ? "translate-y-[2.5px] rotate-45" : "")} />
+                <span className={cn("block h-px w-4 bg-ink transition-opacity duration-200", mobileOpen ? "opacity-0" : "opacity-100")} />
+                <span className={cn("block h-px w-4 bg-ink transition-transform duration-200", mobileOpen ? "-translate-y-[2.5px] -rotate-45" : "")} />
+              </div>
+            </button>
           </div>
         </nav>
       </header>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[55] bg-ink-900/95 backdrop-blur-xl md:hidden"
+            onClick={() => setMobileOpen(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2, delay: 0.05 }}
+              className="flex h-full flex-col items-center justify-center gap-6 px-6"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {navLinks.map((l, i) => (
+                <motion.div
+                  key={l.href}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.04 }}
+                >
+                  <Link
+                    href={l.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="font-display text-2xl font-bold text-ink transition-colors hover:text-moss"
+                  >
+                    {l.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35 }}
+              >
+                <a
+                  href="https://github.com/ltfysl/biTurbo"
+                  className="mt-4 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-ink-900"
+                >
+                  ★ Star on GitHub
+                </a>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

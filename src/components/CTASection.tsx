@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden border-t border-ink-200/10 py-32">
+    <section className="relative overflow-hidden border-t border-ink-200/10 py-20 md:py-32">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-moss/10 blur-[120px]" />
-        <div className="absolute left-1/3 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-amber/10 blur-[120px]" />
-        <div className="absolute right-1/3 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-lilac/10 blur-[120px]" />
+        <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-moss/10 blur-[80px] sm:h-[600px] sm:w-[600px] sm:blur-[120px]" />
+        <div className="absolute left-1/3 top-1/2 h-[200px] w-[200px] -translate-y-1/2 rounded-full bg-amber/10 blur-[80px] sm:h-[400px] sm:w-[400px] sm:blur-[120px]" />
+        <div className="absolute right-1/3 top-1/2 h-[200px] w-[200px] -translate-y-1/2 rounded-full bg-lilac/10 blur-[80px] sm:h-[400px] sm:w-[400px] sm:blur-[120px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6">
         <motion.h2
           initial={false}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,11 +44,11 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-4"
+          className="mt-10 flex flex-col items-center justify-center gap-3 sm:mt-12 sm:flex-row sm:gap-4"
         >
           <a
             href="https://github.com/ltfysl/biTurbo"
-            className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-ink px-7 py-4 text-base font-medium text-ink-900 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-15px_rgba(236,235,227,0.5)]"
+            className="group relative inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-ink px-7 py-4 text-base font-medium text-ink-900 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-15px_rgba(236,235,227,0.5)] sm:w-auto"
           >
             <svg
               viewBox="0 0 24 24"
@@ -63,7 +63,7 @@ export function CTASection() {
           </a>
           <a
             href="/features"
-            className="inline-flex items-center gap-2 rounded-full border border-ink-200/20 px-7 py-4 text-base font-medium text-ink transition-all duration-200 hover:border-ink-200/40 hover:bg-ink-200/5"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-ink-200/20 px-7 py-4 text-base font-medium text-ink transition-all duration-200 hover:border-ink-200/40 hover:bg-ink-200/5 sm:w-auto"
           >
             Read the full feature deep-dive →
           </a>
@@ -74,7 +74,7 @@ export function CTASection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ delay: 0.6 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-6 font-mono text-xs text-ink-300"
+          className="mt-10 flex flex-wrap items-center justify-center gap-3 font-mono text-xs text-ink-300 sm:mt-12 sm:gap-6"
         >
           <span>~12 MB binary</span>
           <span>·</span>

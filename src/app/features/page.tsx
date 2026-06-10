@@ -55,15 +55,15 @@ export default function FeaturesPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="relative min-h-[80vh] overflow-hidden pt-32">
+      <section className="relative min-h-[60vh] overflow-hidden pt-28 sm:min-h-[80vh] sm:pt-32">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/3 top-1/3 h-[500px] w-[500px] rounded-full bg-moss/15 blur-[120px]" />
-          <div className="absolute right-1/3 top-1/4 h-[400px] w-[400px] rounded-full bg-amber/15 blur-[120px]" />
+          <div className="absolute left-1/3 top-1/3 h-[300px] w-[300px] rounded-full bg-moss/15 blur-[120px] sm:h-[500px] sm:w-[500px]" />
+          <div className="absolute right-1/3 top-1/4 h-[250px] w-[250px] rounded-full bg-amber/15 blur-[120px] sm:h-[400px] sm:w-[400px]" />
         </div>
         <div className="grid-lines pointer-events-none absolute inset-0 opacity-30" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 pb-20">
-          <div className="flex items-center gap-3">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="chip">
               <span className="h-1.5 w-1.5 rounded-full bg-moss" />
               The full feature deep-dive
@@ -73,24 +73,24 @@ export default function FeaturesPage() {
             </span>
           </div>
 
-          <h1 className="mt-8 max-w-5xl font-display text-[clamp(3rem,9vw,8rem)] font-extrabold leading-[0.85] tracking-[-0.04em] text-ink">
+          <h1 className="mt-6 max-w-5xl font-display text-[clamp(2.5rem,12vw,8rem)] font-extrabold leading-[0.85] tracking-[-0.04em] text-ink sm:mt-8">
             Every feature,<br />
             <span className="text-ink-300">explained.</span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-balance text-xl text-ink-200/80 md:text-2xl">
+          <p className="mt-6 max-w-2xl text-balance text-lg text-ink-200/80 sm:mt-8 sm:text-xl md:text-2xl">
             Five feature areas, nineteen MCP tools, one Rust binary. This page is the
             engineering reference — what each piece does, how it works, and the code
             signature you actually call.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-2">
+          <div className="mt-8 flex flex-wrap items-center gap-2 sm:mt-10">
             <a href="#memory" className="chip hover:border-moss/40">01 · Memory</a>
             <a href="#mcp" className="chip hover:border-sky/40">02 · MCP</a>
             <a href="#graph" className="chip hover:border-lilac/40">03 · Graph</a>
             <a href="#speed" className="chip hover:border-amber/40">04 · Speed</a>
             <a href="#oss" className="chip hover:border-lilac/40">05 · Open Source</a>
-            <a href="#tools" className="chip hover:border-ink-200/40">→ 19 tools reference</a>
+            <a href="#tools" className="chip hover:border-ink-200/40">→ 19 tools</a>
           </div>
         </div>
       </section>

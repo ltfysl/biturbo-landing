@@ -53,14 +53,14 @@ export function GraphVisual() {
 
   return (
     <div className="relative h-full w-full bg-gradient-to-br from-ink-800/80 to-ink-900/90 p-6">
-      <div className="mb-3 flex items-center justify-between">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-sky" />
           <span className="font-mono text-[10px] uppercase tracking-widest text-ink-300">
             graph://testy/dependency
           </span>
         </div>
-        <div className="flex gap-3 font-mono text-[9px] text-ink-300">
+        <div className="flex flex-wrap gap-2 font-mono text-[9px] text-ink-300 sm:gap-3">
           <span><span className="text-moss">●</span> auth</span>
           <span><span className="text-amber">●</span> domain</span>
           <span><span className="text-sky">●</span> route</span>

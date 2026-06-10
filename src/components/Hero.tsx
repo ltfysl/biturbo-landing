@@ -25,14 +25,14 @@ export function Hero() {
       {mounted ? (
         <motion.div
           style={{ y, opacity, scale }}
-          className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-between px-6 pb-12 pt-32"
+          className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-between px-4 pb-12 pt-28 sm:px-6 sm:pt-32"
         >
           <HeroContent />
         </motion.div>
       ) : (
         <div
           suppressHydrationWarning
-          className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-between px-6 pb-12 pt-32"
+          className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-between px-4 pb-12 pt-28 sm:px-6 sm:pt-32"
         >
           <HeroContent />
         </div>
@@ -46,13 +46,13 @@ export function Hero() {
 function AmbientOrbs() {
   return (
     <div className="pointer-events-none absolute inset-0">
-      <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-moss/15 blur-[120px] animate-drift" />
+      <div className="absolute left-1/4 top-1/4 h-[250px] w-[250px] -translate-x-1/2 rounded-full bg-moss/15 blur-[80px] animate-drift sm:h-[500px] sm:w-[500px] sm:blur-[120px]" />
       <div
-        className="absolute right-1/4 top-1/3 h-[400px] w-[400px] translate-x-1/2 rounded-full bg-amber/15 blur-[120px] animate-drift"
+        className="absolute right-1/4 top-1/3 h-[200px] w-[200px] translate-x-1/2 rounded-full bg-amber/15 blur-[80px] animate-drift sm:h-[400px] sm:w-[400px] sm:blur-[120px]"
         style={{ animationDelay: "3s" }}
       />
       <div
-        className="absolute bottom-1/4 left-1/2 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-lilac/10 blur-[120px] animate-drift"
+        className="absolute bottom-1/4 left-1/2 h-[180px] w-[180px] -translate-x-1/2 rounded-full bg-lilac/10 blur-[80px] animate-drift sm:h-[350px] sm:w-[350px] sm:blur-[120px]"
         style={{ animationDelay: "6s" }}
       />
     </div>

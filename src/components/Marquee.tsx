@@ -20,8 +20,8 @@ export function Marquee() {
     <div className="relative overflow-hidden border-y border-ink-200/10 bg-ink-200/[0.02] py-5">
       <div className="flex animate-marquee whitespace-nowrap">
         {doubled.map((item, i) => (
-          <div key={i} className="flex items-center gap-8 px-8">
-            <span className="font-display text-2xl font-bold tracking-tight text-ink-200/60 md:text-3xl">
+          <div key={i} className="flex items-center gap-4 px-4 sm:gap-8 sm:px-8">
+            <span className="font-display text-xl font-bold tracking-tight text-ink-200/60 sm:text-2xl md:text-3xl">
               {item}
             </span>
             <span className="text-ink-300/30">✦</span>

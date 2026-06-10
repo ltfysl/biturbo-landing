@@ -15,7 +15,7 @@ export function SpeedVisual() {
         <span className="font-mono text-[10px] text-amber">16× smaller</span>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {/* float32 */}
         <div>
           <div className="mb-1.5 font-mono text-[9px] uppercase tracking-wider text-ink-300">
@@ -88,7 +88,7 @@ export function SpeedVisual() {
       </div>
 
       {/* Stats grid */}
-      <div className="mt-6 grid grid-cols-3 gap-2">
+      <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-3">
         {[
           { v: "<50ms", l: "cold start" },
           { v: "<2ms", l: "recall k=8" },
